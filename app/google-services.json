@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1075779229827",
+    "firebase_url": "https://app-for-exam-c3f4a.firebaseio.com",
+    "project_id": "app-for-exam-c3f4a",
+    "storage_bucket": "app-for-exam-c3f4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075779229827:android:9f405bc22d2b04ba4e23b6",
+        "android_client_info": {
+          "package_name": "com.example.appkabombi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075779229827-en1mfetajhr9jomafp2tl0rd6pcqsaol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMkSx1H7sg586v0puRbacAuqt5GTCrp2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075779229827-en1mfetajhr9jomafp2tl0rd6pcqsaol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
