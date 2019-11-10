@@ -25,7 +25,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.appkabombi.AddItemActivity" >
+        <activity
+            android:name="com.example.appkabombi.AddItemActivity"
+            android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity android:name="com.example.appkabombi.MainActivity" >
             <intent-filter>
