@@ -14,11 +14,15 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class AddItemActivity extends AppCompatActivity {
 
-    private Button captureImage;
-    private Button getImageGallery;
-    private Button saveInsert;
+    private BottomAppBar bottomAppBar;
+    private FloatingActionButton captureImage;
+    private FloatingActionButton getImageGallery;
+    private FloatingActionButton saveInsert;
     private EditText inputLabel;
     private EditText inputDetail;
     private ImageView photo;
@@ -35,13 +39,15 @@ public class AddItemActivity extends AppCompatActivity {
 
         sqLiteDatabase = openOrCreateDatabase("MemPicsApp", Context.MODE_PRIVATE,null);
 
-        captureImage = findViewById(R.id.capture_image);
-        getImageGallery = findViewById(R.id.get_image_fromGallery);
-        saveInsert = findViewById(R.id.saveInsert);
+        captureImage = findViewById(R.id.floatCameraBtn);
+        getImageGallery = findViewById(R.id.floatGaleryBtn);
+        saveInsert = findViewById(R.id.floatConfirmBtn);
         inputLabel = findViewById(R.id.labelInput);
         inputDetail = findViewById(R.id.detailInput);
         photo = findViewById(R.id.image_View);
 
+
+        setSupportActionBar(bottomAppBar);
 
         captureImage.setOnClickListener(new View.OnClickListener() {
             @Override

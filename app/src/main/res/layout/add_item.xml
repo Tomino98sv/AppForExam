@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,6 +11,7 @@
         android:id="@+id/image_View"
         android:layout_width="0dp"
         android:layout_height="300dp"
+        android:layout_margin="10dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -17,81 +19,94 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher" />
-    
+
     <EditText
         android:id="@+id/labelInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Label of Image"
         android:inputType="text"
         android:scrollbars="vertical"
-        android:text="TextView"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/detailInput"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scrolViewID"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_View" />
 
-    <EditText
-        android:id="@+id/detailInput"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:inputType="textMultiLine"
-        android:isScrollContainer="true"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+    <ScrollView
+        android:id="@+id/scrolViewID"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelInput" />
+        app:layout_constraintTop_toBottomOf="@+id/labelInput">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+        <EditText
+            android:id="@+id/detailInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="Descripton of image"
+            android:inputType="textMultiLine"
+            android:isScrollContainer="true"
+            app:layout_constraintHorizontal_bias="1.0" />
+    </ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        app:layout_constraintTop_toBottomOf="@+id/detailInput">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/capture_image"
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            style="@style/Widget.MaterialComponents.BottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:backgroundTint="@color/colorPrimary"
+            >
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatConfirmBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="1"
-            android:background="@color/colorAccent"
-            android:text="Capture Image"
-            android:textColor="@color/white"
-            android:textSize="17dp"
-            android:textStyle="bold" />
+            android:src="@drawable/ic_action_adding"
+            app:fabSize="normal"
+            app:layout_anchor="@+id/bottomAppBar"
+            app:layout_anchorGravity="start|top"/>
 
-        <Button
-            android:id="@+id/get_image_fromGallery"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatCameraBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="1"
-            android:background="@color/colorAccent"
-            android:text="Image from gallery"
-            android:textColor="@color/white"
-            android:textSize="17dp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_action_camera"
+            app:fabSize="mini"
+            app:layout_anchor="@+id/bottomAppBar" />
 
-    <Button
-        android:id="@+id/saveInsert"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="0dp" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatGaleryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_action_galery"
+            app:fabSize="mini"
+            app:layout_anchor="@+id/bottomAppBar"
+            app:layout_anchorGravity="end|top" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
