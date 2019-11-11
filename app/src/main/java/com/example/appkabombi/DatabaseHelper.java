@@ -9,13 +9,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public DatabaseHelper(Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public DatabaseHelper(Context context) {
+        super(context,"MemoryPicsDB",null,1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table picsItem (ID INTEGER PRIMARY KEY AUTOINCREMENT,LABEL TEXT,DETAIL TEXT,DATE INTEGER,IMAGEPATH TEXT)");
+
     }
 
     @Override
@@ -38,10 +39,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Cursor getAllData() {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("select * from "+"picsItem",null);
         return res;
     }
+
+    public Cursor getRecord(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("select * from picsItem where id = " + id,null);
+        return res;
+    }
+
+
 
 
 }

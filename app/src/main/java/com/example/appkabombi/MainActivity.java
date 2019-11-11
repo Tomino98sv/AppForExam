@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sqLiteDatabase = new DatabaseHelper(this,"MemoryPicsDB",null,1);
+        sqLiteDatabase = new DatabaseHelper(this);
 
         bottomAppBar = findViewById(R.id.bottomAppBar);
         galery = (GridView)findViewById(R.id.image_Grid);
@@ -56,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
         galery.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(MainActivity.this,AddItemActivity.class);
+                intent.putExtra("idDB",listPics.get(position).idInDB);
+                System.out.println("co posielame");
+                System.out.println(listPics.get(position).idInDB);
+                startActivity(intent);
             }
         });
 
@@ -92,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
             if (convertView == null){
                 convertView = getLayoutInflater().inflate(R.layout.image_item,parent,false);
                 ImageView imageView = (ImageView) convertView.findViewById(R.id.imageView);
+                System.out.println("IMAGE PATH "+listPics.get(position).path);
                 imageView.setImageURI(Uri.parse(listPics.get(position).path));
             }
             return convertView;
@@ -107,12 +114,19 @@ public class MainActivity extends AppCompatActivity {
             Cursor c = sqLiteDatabase.getAllData();
             if (c != null){
                 while (c.moveToNext()){
+                    System.out.println(c.getString(0));
+                    System.out.println(c.getString(1));
+                    System.out.println(c.getString(2));
+                    System.out.println(c.getString(3));
+                    System.out.println(c.getString(4));
                     PictureInfo picsInfo = new PictureInfo(
                             c.getString(4),
-                            c.getString(2),
-                            c.getInt(1)
+                            c.getString(1),
+                            c.getInt(0)
                     );
-
+                    System.out.println("ID: "+picsInfo.idInDB);
+                    System.out.println("label: "+picsInfo.label);
+                    System.out.println("path: "+picsInfo.path);
                     listPics.add(picsInfo);
                 }
             }

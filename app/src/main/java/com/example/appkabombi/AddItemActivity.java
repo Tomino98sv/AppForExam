@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -42,7 +43,7 @@ public class AddItemActivity extends AppCompatActivity {
     private EditText inputDetail;
     private ImageView photo;
 
-    DatabaseHelper sqLiteDatabase;
+    DatabaseHelper sqLiteDatabase = new DatabaseHelper(this);
     public static final int REQUEST_IMAGE = 100;
     public static final int REQUEST_PERMISSION = 200;
     private String imageFilePath = "";
@@ -81,6 +82,33 @@ public class AddItemActivity extends AppCompatActivity {
             }
         });
 
+        try {
+            Bundle oldPage = getIntent().getExtras();
+            Integer idItem = oldPage.getInt("idDB");
+            if (idItem != null){
+//      ID INTEGER PRIMARY KEY AUTOINCREMENT,LABEL TEXT,DETAIL TEXT,DATE INTEGER,IMAGEPATH TEXT
+                System.out.println("skuskaaaaa");
+                System.out.println(idItem.intValue());
+                String uriPath = "";
+                String label = "";
+                String detail = "";
+                Cursor c = sqLiteDatabase.getRecord(idItem.intValue());
+                while (c.moveToNext()){
+                    uriPath = c.getString(4);
+                    label = c.getString(1);
+                    detail = c.getString(2);
+                }
+                System.out.println("uriPath: "+uriPath);
+                System.out.println("label: "+label);
+                System.out.println("detail: "+detail);
+                Uri uri = Uri.parse(uriPath);
+                inputLabel.setText(label);
+                inputDetail.setText(detail);
+                photo.setImageURI(uri);
+            }
+        }catch (Exception e){
+            e.getMessage();
+        }
 
     }
 
@@ -148,7 +176,7 @@ public class AddItemActivity extends AppCompatActivity {
         }else if(imageFilePath.equals("")){
             Toast.makeText(AddItemActivity.this,"Pick some image",Toast.LENGTH_SHORT).show();
         }else {
-            sqLiteDatabase = new DatabaseHelper(this,"MemoryPicsDB",null,1);
+            sqLiteDatabase = new DatabaseHelper(this);
             sqLiteDatabase.insertData(label,detail,1,imageFilePath);
             Intent back = new Intent(AddItemActivity.this,MainActivity.class);
             startActivity(back);
