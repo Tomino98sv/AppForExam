@@ -1,9 +1,20 @@
 -- Merging decision tree log ---
+provider#androidx.core.content.FileProvider
+INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:33:9-41:20
+	android:grantUriPermissions
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:37:13-47
+	android:authorities
+		INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:34:13-60
+	android:exported
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:36:13-37
+	android:name
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:35:13-62
 manifest
-ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-32:12
+ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-45:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\0ac9a886411749f9fe55cfd21ee04f82\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\10df777b08b0c2c2d1f7cb77b3b0099d\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\user\.gradle\caches\transforms-2\files-2.1\9a1815e89a77cd20c88b12db250ad216\AndroidManifest.xml:2:1-11:12
@@ -38,20 +49,20 @@ MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\user\.gradle\caches\
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\bff85678b176353a81d0f57e7e66bd6a\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\2310ade76549e54b8925337652753b95\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\482e3bad20b50ccea3e2751c9586e328\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-45:12
 	package
 		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:3:5-37
 		INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-32:12
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-45:12
 		INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-32:12
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:1-45:12
 		INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:2:11-69
@@ -65,8 +76,12 @@ uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:9:5-79
 	android:name
 		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:9:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:10:22-78
 application
-ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:11:5-30:19
+ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:13:5-43:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\0ac9a886411749f9fe55cfd21ee04f82\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\0ac9a886411749f9fe55cfd21ee04f82\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\user\.gradle\caches\transforms-2\files-2.1\9a1815e89a77cd20c88b12db250ad216\AndroidManifest.xml:9:5-20
@@ -78,37 +93,37 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\us
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\e6991b90b4908427bb3277ef0f6f67c4\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:16:9-35
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:18:9-35
 	android:label
-		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:14:9-41
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:16:9-41
 	android:roundIcon
-		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:15:9-54
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:17:9-54
 	android:icon
-		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:13:9-43
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:15:9-43
 	android:allowBackup
-		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:14:9-35
 	android:theme
-		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:17:9-40
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:19:9-40
 activity#com.example.appkabombi.AddItemActivity
-ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:18:9-22:20
+ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:20:9-24:20
 	android:windowSoftInputMode
-		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:20:13-52
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:22:13-52
 	android:name
-		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:19:13-44
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:21:13-44
 activity#com.example.appkabombi.MainActivity
-ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:23:9-29:20
+ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:25:9-31:20
 	android:name
-		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:23:19-47
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:25:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:24:13-28:29
+ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:26:13-30:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:25:17-69
+ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:25:25-66
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:27:17-77
+ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:27:27-74
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:29:27-74
 uses-sdk
 INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml
@@ -191,3 +206,9 @@ INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:38:13-40:53
+	android:resource
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:40:17-51
+	android:name
+		ADDED from C:\Users\user\Desktop\AppForExam\app\src\main\AndroidManifest.xml:39:17-67

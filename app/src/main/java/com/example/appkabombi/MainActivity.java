@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Debug;
 import android.os.Environment;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,15 +36,14 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<PictureInfo> listPics;
     GridView galery;
 
-    SQLiteDatabase sqLiteDatabase;
+    DatabaseHelper sqLiteDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sqLiteDatabase = openOrCreateDatabase("MemPicsApp", Context.MODE_PRIVATE,null);
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS PicturesRecords(PicsId INTEGER PRIMARY KEY AUTOINCREMENT,Label VARCHAR(255),Detail VARCHAR(255),PicsPath VARCHAR(255), DateTime INTEGER);");
+        sqLiteDatabase = new DatabaseHelper(this,"MemoryPicsDB",null,1);
 
         bottomAppBar = findViewById(R.id.bottomAppBar);
         galery = (GridView)findViewById(R.id.image_Grid);
@@ -100,8 +100,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getData() {
+//        String path, String label, int idInDB
+//      ID INTEGER PRIMARY KEY AUTOINCREMENT,LABEL TEXT,DETAIL TEXT,DATE INTEGER,IMAGEPATH TEXT
+
         listPics = new ArrayList<>();
-            Cursor c = sqLiteDatabase.rawQuery("Select * From PicturesRecords",null);
+            Cursor c = sqLiteDatabase.getAllData();
             if (c != null){
                 while (c.moveToNext()){
                     PictureInfo picsInfo = new PictureInfo(
